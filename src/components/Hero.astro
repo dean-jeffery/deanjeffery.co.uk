@@ -1,5 +1,44 @@
-<div>
-	<h2>Hey, I'm Dean</h2>
-	<p>This is some text</p>
-	<!-- <button>button</button> -->
-</div>
+---
+// src/components/Hero.astro
+import { Download } from 'lucide-react';
+---
+
+<section class='bg-gradient-to-r from-blue-600 to-blue-700 text-white py-20'>
+	<div class='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
+		<div class='text-center'>
+			<h1 class='text-4xl md:text-6xl font-bold mb-6'>Dean Jeffery</h1>
+			<p class='text-xl md:text-2xl mb-8 text-blue-100'>Front End Developer</p>
+			<p class='text-lg mb-8 max-w-3xl mx-auto text-blue-50'>
+				Experienced front end developer with 4+ years creating responsive, accessible web solutions. Passionate about performance optimization and
+				delivering exceptional user experiences.
+			</p>
+			<div class='flex flex-col sm:flex-row gap-4 justify-center'>
+				<a href='#contact' class='bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors'> Get In Touch </a>
+				<a
+					href='/Dean_Jeffery_CV.pdf'
+					download
+					class='border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-flex items-center justify-center gap-2'
+				>
+					<Download size={20} />
+					Download CV
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	// Smooth scrolling for anchor links
+	document.addEventListener('DOMContentLoaded', () => {
+		const links = document.querySelectorAll('a[href^="#"]');
+		links.forEach((link) => {
+			link.addEventListener('click', (e) => {
+				e.preventDefault();
+				const targetId = link.getAttribute('href')?.substring(1);
+				if (targetId) {
+					document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+				}
+			});
+		});
+	});
+</script>

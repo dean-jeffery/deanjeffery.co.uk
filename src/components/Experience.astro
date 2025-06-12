@@ -1,0 +1,124 @@
+---
+// src/components/Experience.astro
+const experience = [
+	{
+		title: 'Front End Developer',
+		company: 'Visualsoft',
+		period: 'September 2022 – February 2025',
+		highlights: [
+			"Developed new features and reusable 'slices' for the Visualsoft platform, now available for all 600+ sites on the platform",
+			"Led development of bespoke front end solutions for 'Enterprise' tier clients, enhancing performance and optimising conversion",
+			'Built bespoke front end features for clients, to be integrated into the Visualsoft core platform at a later date',
+			'Collaborated with designers to transform mockups into pixel-perfect, responsive web pages',
+			'Mentored and supported junior developers, offering guidance on best practices and technical challenges',
+			'Wrote detailed test plans for use by QA teams, designers, product managers, and engineers to ensure smooth deployments',
+			"Participated in go/no-go release meetings, both for personal PR's and as a representative for team members",
+		],
+	},
+	{
+		title: 'Junior Front End Developer',
+		company: 'Visualsoft',
+		period: 'September 2021 – August 2022',
+		highlights: [
+			'Integrated over 250 Visualsoft features into new and existing client storefronts using PHP and CSS',
+			'Resolved issues raised by QA, implemented solutions to balance client and user needs',
+			'Troubleshot and fixed bugs within the Visualsoft platform, for both platform frontend and developer tooling',
+			'Authored comprehensive test plans to maintain site integrity post-launch',
+			"Led the 'go live' process, working closely with Project Managers and DevOps engineers to ensure seamless deployments of websites with fully functional features and payment gateways",
+		],
+	},
+	{
+		title: 'Apprentice Web Developer',
+		company: 'PrimitiveSense Ltd',
+		period: 'August 2017 – July 2018',
+		highlights: [
+			'Designed and developed websites for a diverse range of clients to written and verbal specification',
+			'Created custom email templates for clients, consistent with their website designs',
+		],
+	},
+] as const;
+
+const freelanceWork = {
+	title: 'Freelance Work',
+	period: 'June 2021 – Present',
+	highlights: [
+		'Created a Shopify store for a small business, managing all aspects of the web presence (mywitchyshop.co.uk)',
+		'Offer SEO and performance advice to local signage business to improve sales leads. The work lead to an 80% increase in click through rate',
+	],
+} as const;
+---
+
+<section id='experience' class='py-20 bg-white'>
+	<div class='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
+		<h2 class='text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900'>Experience</h2>
+		<div class='max-w-4xl mx-auto space-y-8'>
+			<!-- Employment History -->
+			{
+				experience.map((job) => (
+					<div class='bg-gray-50 rounded-lg p-8'>
+						<div class='mb-4'>
+							<h3 class='text-xl font-semibold text-gray-900'>{job.title}</h3>
+							<p class='text-blue-600 font-medium'>{job.company}</p>
+							<p class='text-gray-600'>{job.period}</p>
+						</div>
+						<ul class='space-y-2'>
+							{job.highlights.map((highlight) => (
+								<li class='text-gray-700 flex items-start'>
+									<span class='text-blue-600 mr-2 mt-1.5 text-xs'>•</span>
+									<span>{highlight}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+				))
+			}
+
+			<!-- Freelance Work -->
+			<div class='bg-gray-50 rounded-lg p-8'>
+				<div class='mb-4'>
+					<h3 class='text-xl font-semibold text-gray-900'>{freelanceWork.title}</h3>
+					<p class='text-gray-600'>{freelanceWork.period}</p>
+				</div>
+				<ul class='space-y-2'>
+					{
+						freelanceWork.highlights.map((highlight) => (
+							<li class='text-gray-700 flex items-start'>
+								<span class='text-blue-600 mr-2 mt-1.5 text-xs'>•</span>
+								<span>{highlight}</span>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+
+			<!-- Education Section -->
+			<div class='bg-blue-50 rounded-lg p-8'>
+				<h3 class='text-xl font-semibold text-gray-900 mb-6'>Education & Certifications</h3>
+				<div class='grid md:grid-cols-2 gap-6'>
+					<div>
+						<h4 class='font-medium text-gray-900'>BSc (Hons) Applied Computing</h4>
+						<p class='text-gray-600'>Newcastle College</p>
+						<p class='text-sm text-gray-500'>September 2018 – May 2021</p>
+					</div>
+					<div>
+						<h4 class='font-medium text-gray-900'>IT, Software, Web & Telecoms Professionals Level 3</h4>
+						<p class='text-gray-600'>Baltic Training</p>
+						<p class='text-sm text-gray-500'>August 2017 – July 2018</p>
+					</div>
+					<div>
+						<h4 class='font-medium text-gray-900'>BTEC Software & Web Development Level 3</h4>
+						<p class='text-gray-600'>Gateshead College</p>
+						<p class='text-sm text-gray-500'>September 2015 – June 2017</p>
+					</div>
+					<div>
+						<h4 class='font-medium text-gray-900'>Shopify Academy Certifications</h4>
+						<ul class='text-gray-600 text-sm space-y-1'>
+							<li>• Shopify Development Fundamentals</li>
+							<li>• Liquid Storefronts for Theme Developers</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

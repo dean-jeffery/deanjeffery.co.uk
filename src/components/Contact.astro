@@ -1,0 +1,51 @@
+---
+// src/components/Contact.astro
+import { Mail, Phone, Github, Linkedin, ExternalLink } from 'lucide-react';
+---
+
+<section id='contact' class='py-20 bg-blue-600 text-white'>
+	<div class='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
+		<h2 class='text-3xl md:text-4xl font-bold text-center mb-12'>Get In Touch</h2>
+		<div class='max-w-4xl mx-auto text-center'>
+			<p class='text-xl mb-8 text-blue-100'>
+				I'm actively seeking new opportunities and would love to hear about your projects. Let's discuss how I can help bring your ideas to life.
+			</p>
+
+			<div class='grid md:grid-cols-2 gap-8 mb-12'>
+				<div class='bg-blue-700 rounded-lg p-6'>
+					<Mail size={32} className='mx-auto mb-4' />
+					<h3 class='text-xl font-semibold mb-2'>Email</h3>
+					<a href='mailto:itsdeanrj@gmail.com' class='text-blue-200 hover:text-white transition-colors'> itsdeanrj@gmail.com </a>
+				</div>
+				<div class='bg-blue-700 rounded-lg p-6'>
+					<Phone size={32} className='mx-auto mb-4' />
+					<h3 class='text-xl font-semibold mb-2'>Phone</h3>
+					<a href='tel:07984377720' class='text-blue-200 hover:text-white transition-colors'> 07984377720 </a>
+				</div>
+			</div>
+
+			<div class='flex flex-col sm:flex-row gap-4 justify-center'>
+				<a
+					href='https://github.com/dean-jeffery'
+					target='_blank'
+					rel='noopener noreferrer'
+					class='bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center justify-center gap-2'
+				>
+					<Github size={20} />
+					GitHub
+					<ExternalLink size={16} />
+				</a>
+				<a
+					href='https://linkedin.com/in/dean-jeffery-08465b105'
+					target='_blank'
+					rel='noopener noreferrer'
+					class='bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center justify-center gap-2'
+				>
+					<Linkedin size={20} />
+					LinkedIn
+					<ExternalLink size={16} />
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
