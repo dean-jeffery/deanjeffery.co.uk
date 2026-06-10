@@ -12,6 +12,11 @@ const MobileNav: React.FC = () => {
     setIsMenuOpen(false);
   };
 
+  const navigateTo = (path: string) => {
+    window.location.href = path;
+    setIsMenuOpen(false);
+  };
+
   return (
     <div className="md:hidden">
       <button onClick={toggleMenu} className="p-2">
@@ -28,16 +33,10 @@ const MobileNav: React.FC = () => {
               About
             </button>
             <button 
-              onClick={() => scrollToSection('skills')} 
+              onClick={() => navigateTo('/cv')} 
               className="text-left text-gray-700 hover:text-blue-600 transition-colors py-2"
             >
-              Skills
-            </button>
-            <button 
-              onClick={() => scrollToSection('experience')} 
-              className="text-left text-gray-700 hover:text-blue-600 transition-colors py-2"
-            >
-              Experience
+              CV
             </button>
             <button 
               onClick={() => scrollToSection('contact')} 
