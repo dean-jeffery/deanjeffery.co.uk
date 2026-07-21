@@ -1,0 +1,22 @@
+---
+const links = [
+	{ label: 'GitHub', href: 'https://github.com/dean-jeffery' },
+	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/dean-jeffery' },
+	{ label: 'CV', href: '/cv' },
+] as const;
+---
+
+<footer class='mt-24 w-full border-t border-slate-200 bg-white/80 py-12'>
+	<div class='mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 text-sm text-slate-600 sm:px-6 md:flex-row lg:px-8'>
+		<div class='font-medium text-slate-900'>© 2026 Dean Jeffery. Built with precision.</div>
+		<div class='flex gap-8'>
+			{
+				links.map((link) => (
+					<a class='transition-colors hover:text-blue-600' href={link.href} target='_blank' rel='noreferrer'>
+						{link.label}
+					</a>
+				))
+			}
+		</div>
+	</div>
+</footer>
