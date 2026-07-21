@@ -1,0 +1,35 @@
+---
+const links = [
+	{ label: 'Email', href: 'mailto:itsdeanrj@gmail.com', value: 'itsdeanrj@gmail.com' },
+	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/dean-jeffery', value: 'linkedin.com/in/dean-jeffery' },
+	{ label: 'GitHub', href: 'https://github.com/dean-jeffery', value: 'github.com/dean-jeffery' },
+] as const;
+---
+
+<section id='contact' class='mt-24'>
+	<div class='relative overflow-hidden rounded-2xl bg-blue-600 p-12 text-center text-white shadow-lg md:p-24'>
+		<h2 class='mb-6 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl'>Let's work together.</h2>
+		<p class='mx-auto mb-10 max-w-2xl text-lg text-blue-100'>Available for freelance opportunities and full-time roles.</p>
+		<div class='mb-10 flex flex-wrap justify-center gap-4'>
+			{
+				links.map((link) => (
+					<a
+						class='text-white/90 underline-offset-4 transition-colors hover:text-white hover:underline'
+						href={link.href}
+						target='_blank'
+						rel='noreferrer'
+					>
+						{link.label}: {link.value}
+					</a>
+				))
+			}
+		</div>
+		<a
+			class='inline-flex items-center gap-2 rounded bg-white px-8 py-4 font-semibold uppercase tracking-[0.2em] text-blue-600 transition-colors hover:bg-slate-100'
+			href='mailto:itsdeanrj@gmail.com'
+		>
+			Say Hello
+			<span class='material-symbols-outlined text-sm'>arrow_forward</span>
+		</a>
+	</div>
+</section>

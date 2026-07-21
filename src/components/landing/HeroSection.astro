@@ -1,0 +1,46 @@
+---
+const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Astro', 'Shopify', 'WordPress', 'Accessibility'] as const;
+---
+
+<section class='grid items-start gap-12 lg:grid-cols-12'>
+	<div class='relative z-10 space-y-8 lg:col-span-8'>
+		<div class='inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-blue-600 shadow-sm'>
+			<span class='h-2.5 w-2.5 animate-pulse rounded-full bg-blue-600'></span>
+			Available for front-end roles and freelance work
+		</div>
+		<h1 class='hero-heading font-semibold tracking-[-0.06em] text-slate-900'>Front-end developer building accessible, performant websites.</h1>
+		<p class='max-w-2xl text-lg leading-8 text-slate-600'>
+			I’m Dean, a Newcastle-based developer working with HTML, CSS, JavaScript, React, Shopify and WordPress. I care about clean interfaces, responsive
+			layouts, and front-end work that feels considered.
+		</p>
+		<div class='flex flex-wrap gap-4 pt-4'>
+			<a class='flex items-center gap-2 rounded bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700' href='/cv'>
+				View CV
+				<span class='material-symbols-outlined text-sm'>arrow_forward</span>
+			</a>
+			<a
+				class='rounded border border-slate-300 px-6 py-3 font-semibold text-slate-700 transition-colors hover:border-blue-600 hover:text-blue-600'
+				href='#contact'
+			>
+				Get in touch
+			</a>
+		</div>
+	</div>
+	<div class='group relative mt-12 lg:col-span-4 lg:mt-0'>
+		<div
+			class='flex h-full min-h-[300px] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-lg'
+		>
+			<div class='mb-8 text-[10px] uppercase tracking-[0.3em] text-slate-400'>skillset.json</div>
+			<h3 class='mb-8 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-blue-600'>
+				<span class='material-symbols-outlined text-sm'>terminal</span> Front-end focus
+			</h3>
+			<div class='mb-8 flex flex-grow flex-wrap gap-2'>
+				{skills.map((skill) => <span class='rounded-md border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm text-slate-600'>{skill}</span>)}
+			</div>
+			<div class='flex justify-between border-t border-slate-200 pt-6 text-xs uppercase tracking-[0.2em] text-slate-500'>
+				<span>Status: Available</span>
+				<span>Loc: NCL</span>
+			</div>
+		</div>
+	</div>
+</section>
